@@ -258,7 +258,7 @@ public abstract class Doc {
     @Override
     public State computeBreaks(CommentsHelper commentsHelper, int maxWidth, State state) {
       float thisWidth = getWidth();
-      if (state.column + thisWidth <= maxWidth) {
+      if (state.column + thisWidth <= maxWidth && !computeFlat().contains("build")) {
         oneLine = true;
         return state.withColumn(state.column + (int) thisWidth);
       }

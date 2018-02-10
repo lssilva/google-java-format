@@ -1,5 +1,28 @@
 # google-java-format
 
+
+This fork is a small hack to force google-java-format to always break builders into multiple lines
+
+```java 
+public static final Instrument BOND_INSTRUMENT =
+      Instrument.builder().symbol("TENNOT").sector("Gov").type(InstrumentType.et).build();
+```
+
+After
+
+```java 
+
+public static final Instrument BOND_INSTRUMENT =
+      Instrument.builder()
+          .symbol("TENNOT")
+          .sector("Gov")
+          .type(InstrumentType.et)
+          .build();
+
+```
+
+[Google Java format]:https://github.com/google/google-java-format
+
 `google-java-format` is a program that reformats Java source code to comply with
 [Google Java Style][].
 
